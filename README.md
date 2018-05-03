@@ -1,6 +1,10 @@
 # timetable
 
-## 분담
+그룹 프로젝트 등을 할 때 다수가 가능한 시간을 잡기 어려움. 각각의 스케줄표를 입력하면 언제 누가 가능한지 한눈에 보여주는 웹페이지.
+
+계획 및 To-Do list: https://github.com/AjouDoiT-WebProj/timetable/projects/1
+
+## 페이지 분담
 
 * index - 태성
 * 팀시간표 - 준민
