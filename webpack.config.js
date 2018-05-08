@@ -4,10 +4,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    index: './src/js/index.js'
+  },
   output: {
-    path: path.resolve(__dirname, './dist/'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, './dist/'),
+    filename: '[name].min.js'
   },
   devServer: {
     contentBase: path.join(__dirname, './dist/'),
