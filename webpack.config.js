@@ -8,7 +8,7 @@ module.exports = {
     index: './src/js/index.js'
   },
   output: {
-    path: path.join(__dirname, './dist/'),
+    path: path.join(__dirname, './dist/src/'),
     filename: '[name].min.js'
   },
   devServer: {
