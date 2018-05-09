@@ -5,7 +5,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/js/index.js'
+    index: './src/js/index.js',
+    edit: './src/js/edit.js',
+    signup: './src/js/signup.js',
+    teamtable: './src/js/teamtable.js'
   },
   output: {
     path: path.join(__dirname, './dist/src/'),
