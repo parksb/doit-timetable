@@ -1,0 +1,50 @@
+<html>
+<style>
+input{
+    border: 2px double deepskyblue
+    
+}
+div{
+    border-radius: 5px;
+    border: solid 10px rgb(16, 66, 116);
+    padding: 20px 80px 40px 80px ;
+    width: 250px;
+}
+
+</style>
+
+<body>
+    <h3>web project</h3>
+<div>
+    <p>Log in</p>
+<input id="id" type="text">
+<input id='passward' type="password">
+<button onclick="login()">login</button>
+</div>
+
+<script>
+    var id=document.getElementById('id');
+    var pass=document.getElementById('passward');
+    function login(){
+        if(id.value=='1111')
+        {
+            if(pass.value=='1111'){
+                window.alert('to where...?');
+            }
+            else{
+                window.alert('passward wrong');
+                pass.value="";
+            }
+
+
+        }else{
+            window.alert('id is wrong!');
+            id.value="";
+            pass.value="";
+        }
+
+    }
+</script>
+
+</body>   
+</html>
