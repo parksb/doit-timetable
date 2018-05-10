@@ -1,0 +1,19 @@
+#container {
+  width: 500px;
+}
+
+#team-list li {
+  font-size: 15pt;
+  border: 2px black solid;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+#team-list li a {
+  color: black;
+  text-decoration: none;
+}
+
+#team-list li a:hover {
+  text-decoration: underline;
+}

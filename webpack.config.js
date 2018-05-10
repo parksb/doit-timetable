@@ -8,7 +8,8 @@ module.exports = {
     index: './src/js/index.js',
     edit: './src/js/edit.js',
     signup: './src/js/signup.js',
-    teamtable: './src/js/teamtable.js'
+    teamtable: './src/js/teamtable.js',
+    teamlist: './src/js/teamlist.js'
   },
   output: {
     path: path.join(__dirname, './dist/src/'),
