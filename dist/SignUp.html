@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel = "stylesheet" href = "signup.css">
+        <link rel = "stylesheet" type = "text/css" href = "signup.css">
+        <script src="jquery-3.3.1.min.js"></script>
+        <style>
+            header {
+	            border: 5px solid blue;
+	            padding-left: 20px;
+	            padding-right: 20px;
+            }
+
+            #signup {
+	            margin : 50px 25% 0 25%;
+	            border : 20px solid blue;
+                padding: 5px 5% 15% 5%;
+            }
+            .left {
+                float : left;
+            }
+
+            #signupname {
+                padding: 0 20px 0 0;
+            }
+        </style>
     </head>
     <body>
         <header>
-            <p>DoiT</p>   
-            <a href = "login.html">로그인</a>
+            <span>DoiT</span>   
+            <a href = "login.html" align = "right" class = "link">로그인</a>
         </header>
         <div id = "signup">
-            <h3>회원가입</h3>
-        	<form action="" method = "get"> <!--put where to send the form-data when a form is submitted in action-->
-        		<input type="text" name = "name" value = "이름"></input><br>
-        		<input type="text" name = "ID" value = "아이디"></input><br>
-           		<input type="text" name = "password" value = "비밀번호"></input><br>
-        		<input type="text" name = "email" value = "이메일"></input><br>
-        	</form>
-        	<div id = "detail">  
+            <h3 align = "">회원가입</h3>
+            <div class = "left" id = "signupname">
+                <span>이름</span><br>
+                <span>ID</span><br>
+                <span>비밀번호</span><br>
+                <span>이메일</span>
             </div>
-        	<button>가입하기</button>
+        	<form class = "left" action="" method = "POST"> <!--put where to send the form-data when a form is submitted in action-->
+        		<input type="text" name = "name"></input><br>
+        		<input type="text" id = "ID" name = "ID" ></input><span id = "id_if"> 조건 </span><br>
+           		<input type="password" id = "password" name = "password"><span id = "pswd_if"> 조건 </span></input><br>
+                <input type="text" name = "email"></input><br>
+                <input type = "submit" value = "가입하기"></input>
+        	</form>
         </div>
+        <script src = "src/signup.min.js"></script>
     </body>
 </html>

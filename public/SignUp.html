@@ -1,17 +1,42 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <link rel = "stylesheet" type = "text/css" href = "signup.css">
+        <script src="jquery-3.3.1.min.js"></script>
+        <style>
+            header {
+	            border: 5px solid blue;
+	            padding-left: 20px;
+	            padding-right: 20px;
+            }
 
+            #signup {
+	            margin : 50px 15% 0 15%;
+	            border : 20px solid blue;
+	            padding: 5px 5% 10px 5%;
+            }
+        </style>
     </head>
     <body>
-        <div id= "head">
-            <a href= "login.html">login</a>
+        <header>
+            <p>DoiT</p>   
+            <p id = login>로그인</p>
+        </header>
+        <div id = "signup">
+            <h3>회원가입</h3>
+        	<form action="" method = "POST"> <!--put where to send the form-data when a form is submitted in action-->
+        		<input type="text" name = "name" value = "이름"></input><br>
+        		<input type="text" id = "ID" name = "ID" value = "아이디"></input><br>
+           		<input type="text" id = "password" name = "password" value = "비밀번호"></input><br>
+                <input type="text" name = "email" value = "이메일"></input><br>
+                <input type = "submit" value = "가입하기"></input> 
+        	</form>
+        	<div id = "detail">
+                <br>
+                <p id = "id_if"> 조건 </p>
+                <p id = "pswd_if"> 조건 </p>
+            </div>
         </div>
-        <div id="signup">
-            <h4>회원가입</h4><br>
-            <h6>이름: </h6><input type= "text" name = "name"><br>
-            <h6>ID: </h6><input type= "text" name = "ID"><br>
-            <h6>비밀번호: </h6><input type= "text" name = "pswd"><br>
-            <h6>이메일: </h6><input type= "text" name = "email"><br>
-        </div>
+        <script src = "src/signup.min.js"></script>
     </body>
 </html>
