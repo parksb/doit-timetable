@@ -1,11 +1,20 @@
 header {
-	border: 5px solid blue;
+	border-radius: 10px;
+    border: double 5px black;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
 #signup {
-	margin : 50px 30% 0 30%;
-	border : 20px solid blue;
-	padding: 5px 5% 10px 5%;
+	margin : 50px 25% 0 25%;
+	border-radius: 10px;
+    border: double 5px black;
+	padding: 5px 5% 15% 5%;
+}
+.left {
+	float : left;
+}
+
+#signupname {
+	padding: 0 20px 0 0;
 }

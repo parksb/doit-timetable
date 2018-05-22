@@ -1,3 +1,5 @@
+import '../css/signup.css';
+
 $(document).ready()
 var IDlist = [];
 var ID = document.getElementById("ID").value;
