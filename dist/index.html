@@ -73,9 +73,6 @@
   .p {
     cursor: pointer;
   }
-  a{
-    text-decoration: none;
-  }
 </style>
 
 <body>
@@ -84,11 +81,9 @@
     <p style="margin-top: 0%">Log in</p>
 
     <div id='des1' class='the'>
-      <input id="id" type="text" style="margin-bottom: 1px"
-      placeholder="id">
+      <input id="id" type="text" style="margin-bottom: 1px">
 
-      <input id='passward' type="password"
-      placeholder="passward">
+      <input id='passward' type="password">
 
     </div>
 
@@ -102,7 +97,7 @@
       <span class='bar'>|</span>
       <a class='p' id='mp'>비밀번호 찾기</a>
       <span class="bar">|</span>
-      <a class='p' id='bp' href="./SignUp.html">회원 가입</a>
+      <a class='p' id='bp'>회원 가입</a>
     </div>
   </div>
 
@@ -112,7 +107,7 @@
     function login() {
       if (id.value == '1111') {
         if (pass.value == '1111') {
-          location.href=""
+          window.alert('to where...?');
         }
         else {
           window.alert('passward wrong');
