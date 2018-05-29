@@ -5,8 +5,11 @@
     </head>
     <body>
         <header>
-            <span>DoiT</span>   
-            <a href = "index.html" >로그인</a>
+            <span>DoiT</span>
+            <div id = "linklist" align = "right">
+                <a href = "index.html">로그인</a>
+            </div>   
+            
         </header>
         <div id = "signup"> <!--질문: 이 div에 h3외에 요소가 포함되지 않음-->
             <h3>회원가입</h3>
@@ -19,9 +22,9 @@
         	<div class = "left">
         		<input type="text" id = "name" name = "name"></input><br>
         		<input type="text" id = "ID" name = "ID"></input><br>
-           		<input type="text" id = "password" name = "password"></input><br>
+           		<input type="password" id = "password" name = "password"></input><br>
                 <input type="text" id = "email" name = "email"></input><br>
-                <button id = "submit" value = "가입하기"></button> 
+                <button id = "submit" >가입하기</button> 
             </div>
         </div>
         <script src = "src/signup.min.js"></script>

@@ -5,11 +5,17 @@ header {
 	padding-right: 20px;
 }
 
+#linklist{
+	float : right;
+	width : 70%;
+}
 #signup {
-	margin : 50px 25% 0 25%;
+	margin : 50px 25% 0;
 	border-radius: 10px;
     border: double 5px black;
 	padding: 5px 5% 5px 5%;
+	width : 260px;
+	height: 200px;
 }
 .left {
 	float : left;
@@ -17,4 +23,8 @@ header {
 
 #signupname {
 	padding: 0 5% 0 0;
+}
+#submit {
+	width: 91px;
+	height: 21px;
 }
