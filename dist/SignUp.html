@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="jquery-3.3.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <header>
-            <p>DoiT</p>   
-            <p id = login>로그인</p>
+            <span>DoiT</span>   
+            <a href = "index.html" >로그인</a>
         </header>
-        <div id = "signup">
+        <div id = "signup"> <!--질문: 이 div에 h3외에 요소가 포함되지 않음-->
             <h3>회원가입</h3>
-        	<form action="" method = "POST"> <!--put where to send the form-data when a form is submitted in action-->
-        		<input type="text" name = "name" value = "이름"></input><br>
-        		<input type="text" id = "ID" name = "ID" value = "아이디"></input><br>
-           		<input type="text" id = "password" name = "password" value = "비밀번호"></input><br>
-                <input type="text" name = "email" value = "이메일"></input><br>
-                <input type = "submit" value = "가입하기"></input> 
-        	</form>
-        	<div id = "detail">
-                <br>
-                <p id = "id_if"> 조건 </p>
-                <p id = "pswd_if"> 조건 </p>
+            <div class = "left" id = "signupname">
+                <span>이름</span><br>
+                <span>ID</span><br>
+                <span>비밀번호</span><br>
+                <span>이메일</span>
+            </div>
+        	<div class = "left">
+        		<input type="text" id = "name" name = "name"></input><br>
+        		<input type="text" id = "ID" name = "ID"></input><br>
+           		<input type="text" id = "password" name = "password"></input><br>
+                <input type="text" id = "email" name = "email"></input><br>
+                <button id = "submit" value = "가입하기"></button> 
             </div>
         </div>
         <script src = "src/signup.min.js"></script>
