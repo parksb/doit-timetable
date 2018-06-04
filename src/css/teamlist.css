@@ -4,7 +4,7 @@
 
 #team-list li {
   font-size: 15pt;
-  border: 2px black solid;
+  border: 5px black double;
   padding: 5px;
   margin-bottom: 15px;
 }
