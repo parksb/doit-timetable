@@ -19,5 +19,6 @@ $("#submit").click(function(){
         var Email = document.getElementById("email").value;
         // transmit the info to server here
         window.alert("회원가입이 완료되었습니다.");
+        window.location.href = "main.html"
     }
 });
