@@ -26,6 +26,9 @@ module.exports = {
       {
         from: path.join(__dirname, './public/'),
         to: path.join(__dirname, './dist/')
+      }, {
+        from: path.join(__dirname, './src/php/'),
+        to: path.join(__dirname, './dist/src/php/')
       }
     ])
   ],
