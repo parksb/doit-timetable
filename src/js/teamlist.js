@@ -1,32 +1,19 @@
-import $ from 'jquery';
-import '../css/teamlist.css';
+import $ from "jquery";
+import "../css/teamlist.css";
+
+$.ajax({ // AJAX 통신을 이용
+  type: "POST",
+  url: "../src/php/_teamlist.php", // teamlist.php에 접근
+  dataType: "JSON", // JSON 형식으로 수신
+  success: function(result) { // 성공적으로 수신한 경우
+    renderList(result);
+  }
+});
 
 function renderList(list) {
   for (let i = 0; i < list.length; i += 1) {
-    $('#team-list').append(`<li><a href="./teamtable.html?i=${list[i].id}">${list[i].name}</a></li>`);
+    $("#team-list").append(
+      `<li><a href="./teamtable.html?i=${list[i].id}">${list[i].name}</a></li>`
+    );
   }
 }
-
-(() => {
-  // dummy data
-  const list = [
-    {
-      id: '0',
-      name: 'team1',
-    }, {
-      id: '1',
-      name: 'team2',
-    }, {
-      id: '2',
-      name: 'team3',
-    }, {
-      id: '3',
-      name: 'team4',
-    }, {
-      id: '4',
-      name: 'team5',
-    },
-  ];
-
-  renderList(list);
-})();
