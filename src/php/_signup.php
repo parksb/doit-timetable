@@ -1,4 +1,6 @@
 <?php
+require "./_connect.php";
+
 if (!empty($_POST["name"])) {
   $userName = $_POST["name"];
 } else {
