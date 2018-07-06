@@ -7,7 +7,7 @@
         <header>
             <span>DoiT</span>
             <div id = "linklist" align = "right">
-                <a href = "index.html">로그인</a>
+                <a href = "index.php">로그인</a>
             </div>   
             
         </header>

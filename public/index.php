@@ -88,7 +88,7 @@
       <span class='bar'>|</span>
       <a class='p' id='mp'>비밀번호 찾기</a>
       <span class="bar">|</span>
-      <a class='p' id='bp' href="./SignUp.html">회원 가입</a>
+      <a class='p' id='bp' href="./signup.php">회원 가입</a>
     </div>
   </div>
 
