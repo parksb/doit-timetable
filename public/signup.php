@@ -20,13 +20,13 @@
                 <span>비밀번호</span><br>
                 <span>이메일</span>
             </div>
-        	<div class = "left">
+            <form action = "../src/php/_signup.php" class = "left">
         		<input type="text" id = "name" name = "name"></input><br>
         		<input type="text" id = "ID" name = "ID"></input><br>
            		<input type="password" id = "password" name = "password"></input><br>
                 <input type="text" id = "email" name = "email"></input><br>
-                <button id = "submit" >가입하기</button> 
-            </div>
+                <input type = "submit" value = "가입하기">
+            </form>
         </div>
         <script src = "src/signup.min.js"></script>
     </body>
