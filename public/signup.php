@@ -20,7 +20,7 @@
                 <span>비밀번호</span><br>
                 <span>이메일</span>
             </div>
-            <form action = "../src/php/_signup.php" class = "left">
+            <form action = "../src/php/_signup.php" method = "POST" class = "left">
         		<input type="text" id = "name" name = "name"></input><br>
         		<input type="text" id = "ID" name = "ID"></input><br>
            		<input type="password" id = "password" name = "password"></input><br>
