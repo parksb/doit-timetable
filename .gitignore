@@ -30,3 +30,6 @@ karma.conf.local.js
 .\#*
 .vscode/
 dist/
+
+# Codes
+src/php/_connect.php
