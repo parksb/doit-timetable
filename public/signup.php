@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title>회원가입</title>
     </head>
     <body>
         <header>
             <span>DoiT</span>
             <div id = "linklist" align = "right">
-                <a href = "index.php">로그인</a>
+                <a href = "index.php" style = "text-decoration: none">로그인</a>
             </div>   
             
         </header>
