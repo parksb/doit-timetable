@@ -11,10 +11,10 @@ if (!empty($_POST["name"])) {
   exit;
 }
 if (!empty($_POST["ID"])) {
-  if(($_POST["ID"]).strlen >= 8 && ($_POST["ID"]).strlen < 20){
-    $query = "SELECT EXISTS (SELECT 1 FROM user WHERE $_POST["ID"]");
+  if(strlen($_POST["ID"]) >= 8 && strlen($_POST["ID"]) < 20){
+    $query = 'EXISTS (SELECT 1 FROM user WHERE userId = $_POST["ID"])';
     $result = mysqli_query($conn, $query);
-    if($result){
+    if(!$result){
       $userID = $_POST["ID"];
     }else{ //ID가 사용중일 때
       echo "<script>
@@ -38,7 +38,7 @@ if (!empty($_POST["ID"])) {
   exit;
 }
 if (!empty($_POST["password"])) {
-  if(($_POST["password"]).strlen >= 8 && ($_POST["password"]).strlen < 20){
+  if((strlen($_POST["password"]) >= 8 && strlen($_POST["password"]) < 20){
     $password = $_POST["password"];
   }else{ //비밀번호의 길이<8 비밀번호의 길이>=20일 때
     echo "<script>
@@ -65,7 +65,7 @@ if (!empty($_POST["email"])) {
 }
 
 if (isset($userName, $userID, $password, $email)){
-  $query = "INSERT INTO user (name, userId, password, email) VALUE ($userName, $userID, $password, $email)"
+  $query = "INSERT INTO user (name, userId, password, email) VALUE ($userName, $userID, $password, $email)";
   mysqli_query($conn, $query);
 }
 ?>
