@@ -12,8 +12,8 @@ if (!empty($_POST["name"])) {
 }
 if (!empty($_POST["ID"])) {
   if(strlen($_POST["ID"]) >= 8 && strlen($_POST["ID"]) < 20){
-    $temp = $_POST["ID"];
-    $query = "SELECT id FROM user WHERE userId = '$temp'";
+    $ID = $_POST["ID"];
+    $query = "SELECT id FROM user WHERE userId = '$ID'";
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) == 0){
       $userID = $_POST["ID"];
@@ -74,7 +74,7 @@ if (isset($userName, $userID, $password, $email)){
     echo "<script>
     alert('회원가입이 완료되었습니다.');
     </script>";
-    header("Location:.../dist/main.php");
+    header("Location: http://localhost/timetable/dist/main.php");
     exit;
   }else{
     echo "<script>
