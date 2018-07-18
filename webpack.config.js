@@ -10,7 +10,8 @@ module.exports = {
     signup: './src/js/signup.js',
     teamtable: './src/js/teamtable.js',
     teamlist: './src/js/teamlist.js',
-    main: './src/js/main.js'
+    main: './src/js/main.js',
+    setting: './src/js/setting.js'
   },
   output: {
     path: path.join(__dirname, './dist/src/'),
