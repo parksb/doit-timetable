@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팀목록/시간표</title>
 </head>
-<style>
-
-</style>
 
 <body>
     
