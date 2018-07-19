@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팀목록/시간표</title>
 </head>
-<style>
-    
-</style>
 
 <body>
     <div class='container'></div>
@@ -16,7 +13,7 @@
         <button class='btn' onclick="location.href='table.php' "> TABLE </button>
         <button class='btn' onclick="location.href='setting.php' "> 설정 </button>
     </div>
-    <script src="./src/js/main.js"></script>
+    <script src="src/main.min.js"></script>
 </body>
 
 </html>

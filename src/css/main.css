@@ -51,7 +51,7 @@ button:hover {
 .btn::after {
     /*background-color: #f00;*/
     height: 100%;
-    left: -37%;
+    left: -40%;
     top: 0;
     transform: skew(50deg);
     transition-duration: 0.6s;
