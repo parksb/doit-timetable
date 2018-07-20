@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <style>
   h3 {
@@ -70,16 +73,16 @@
     <p style="margin-top: 0%">Log in</p>
 
     <div id='des1' class='the'>
-      <input id="id" type="text" style="margin-bottom: 1px"
-      placeholder="id">
+      <form method='post' action='./src/php/_index.php'>
+        <input id="id" type="text" style="margin-bottom: 1px"
+        placeholder="id" name='user_id'>
 
-      <input id='passward' type="password"
-      placeholder="passward">
-
-    </div>
-
-    <div id='des2' class='the'>
-      <button onclick="login()">login</button>
+        <input id='passward' type="password"
+        placeholder="passward" name='user_pass'>
+      
+        <input type='submit' value='로그인'></button>
+      
+      </form>
     </div>
 
     <!-- onclick 추가-->
@@ -91,26 +94,11 @@
       <a class='p' id='bp' href="./signup.php">회원 가입</a>
     </div>
   </div>
-
-  <script>
-    var id = document.getElementById('id');
-    var pass = document.getElementById('passward');
-    function login() {
-      if (id.value == '1111') {
-        if (pass.value == '1111') {
-          location.href=""
-        }
-        else {
-          window.alert('passward wrong');
-          pass.value = "";
-        }
-      } else {
-        window.alert('id is wrong!');
-        id.value = "";
-        pass.value = "";
-      }
-    }
-  </script>
+<?php
+  if(isset($_SESSION['login_user'])){
+    header('Location: ..../public/main.php');
+  }
+?>
 
 </body>
 
