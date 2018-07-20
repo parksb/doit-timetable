@@ -8,7 +8,7 @@ $pass = $_POST['user_pass'];
 
 $sql="SELECT*FROM user WHERE user_Id = '$id' AND pass='$pass'";
 
-$res=mysqli_query($sql);
+$res=mysqli_query($conn,$sql);
 $count=mysqli_num_rows($res);
 
 if($count==1){
@@ -16,8 +16,8 @@ if($count==1){
     $_SESSION['id']=$id;
 
     if(isset($_SESSION['id'])){
-
-        header['Location: ..../public/main.php'];
+        echo "<script>alert(\"login success\");history.back(-1);</script>";
+        header('Location: ..../public/main.php');
         
     }else{
         echo "<script>alert(\"fail\");history.back(-1);</script>";
@@ -25,7 +25,7 @@ if($count==1){
     }
 
 }else{
-    echo "<script>alert(\"not match id or pass\");history.back(-1);</script>";
+    echo "<script>alert(\"not match id or pass $count ??\");history.back(-1);</script>";
     exit();
 }
 ?>
