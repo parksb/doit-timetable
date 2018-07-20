@@ -12,14 +12,14 @@ if (!empty($_POST["name"])) {
 }
 if (!empty($_POST["ID"])) {
   if(strlen($_POST["ID"]) >= 8 && strlen($_POST["ID"]) < 20){
-    $query = 'EXISTS (SELECT 1 FROM user WHERE userId = $_POST["ID"])';
+    $ID = $_POST["ID"];
+    $query = "SELECT id FROM user WHERE userId = '$ID'";
     $result = mysqli_query($conn, $query);
-    if(!$result){
+    if(mysqli_num_rows($result) == 0){
       $userID = $_POST["ID"];
     }else{ //ID가 사용중일 때
       echo "<script>
         alert('사용중인 ID입니다.');
-        history.back(-1);
         </script>";
       exit;
     }
@@ -38,8 +38,8 @@ if (!empty($_POST["ID"])) {
   exit;
 }
 if (!empty($_POST["password"])) {
-  if((strlen($_POST["password"]) >= 8 && strlen($_POST["password"]) < 20){
-    $password = $_POST["password"];
+  if((strlen($_POST["password"]) >= 8 && strlen($_POST["password"]) < 20)){
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
   }else{ //비밀번호의 길이<8 비밀번호의 길이>=20일 때
     echo "<script>
         alert('비밀번호의 길이는 8이상 20미만이어야 합니다.');
@@ -65,7 +65,23 @@ if (!empty($_POST["email"])) {
 }
 
 if (isset($userName, $userID, $password, $email)){
-  $query = "INSERT INTO user (name, userId, password, email) VALUE ($userName, $userID, $password, $email)";
-  mysqli_query($conn, $query);
+  $query = "INSERT INTO user (name, userId, password, email) VALUES ('$userName', '$userID', '$password', '$email')";
+  if(mysqli_query($conn, $query)){
+    $query = "SELECT id FROM user WHERE userId = '$userID'";
+    $result = mysqli_query($conn, $query);
+    session_start();
+    $_SESSION['id'] = mysqli_fetch_row($result)[0];
+    echo "<script>
+    alert('회원가입이 완료되었습니다.');
+    </script>";
+    header("Location: http://localhost/timetable/dist/main.php");
+    exit;
+  }else{
+    echo "<script>
+    alert('오류가 발생했습니다.');
+    history.back(-1);
+    </script>";
+    exit;
+  }
 }
 ?>
