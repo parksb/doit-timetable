@@ -6,15 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>설정</title>
 </head>
-
 <body>
   <header>
     <span>DoiT</span>
       <div id = "linklist" align = "right">
-        <a href = "index.php">로그아웃</a>
+        <a href = "index.php" style = "text-decoration: none">로그아웃</a>
       </div>       
   </header>
-  
+  <hr>
   <div id = "setting">
     <h3>이름/비밀번호 변경 및 회원 탈퇴</h3>
     <div class = "left" id = "setting2">
