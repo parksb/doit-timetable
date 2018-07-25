@@ -7,7 +7,7 @@
         <header>
             <span>DoiT</span>
             <div id = "linklist" align = "right">
-                <a href = "index.php" style = "text-decoration: none">로그인</a>
+                <a href = "index.php" style = "text-decoration: none">로그인</a> <!--로그인으로 이동-->
             </div>   
         </header>
         <hr>
