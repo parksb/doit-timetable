@@ -2,26 +2,31 @@
 <html>
     <head>
         <title>팀 생성</title>
-        <style>
-            #linklist{
-                float : right;
-                width : 70%;
-            }
-        </style><!--temporary-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
+            var memberlist = [];
+            memberlist.push("<?php echo $_SESSION['id']; ?>")
             function memSearch(){
                 var memberID = document.getElementById("memberID").value;
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function(){
                     if (this.readyState == 4 && this.status == 200){
-                        document.getElementById("memberlist").innerHTML = this.responseText;
+                        if (true){
+                            var member = JSON.parse(this.responseText);
+                            memberlist.push(member[0]);
+                            $("#memberlist").append(
+                                '<tr> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
+                            )
+                            console.log(memberlist);
+                        }else{
+                            alert("존재하지 않는 유저입니다.");
+                        }
                     }
                 }
-                xmlhttp.open("GET", "src/php/_memsearch.php?memID=" + memberID, true); //_memsearch.php가 실행되지 않음
+                xmlhttp.open("GET", "src/php/_memsearch.php?memID=" + memberID, true);
                 xmlhttp.send();
             }
-        </script><!--temporary-->
-    </body>
+        </script>
     </head>
     <body>
         <header>
@@ -45,5 +50,6 @@
                 </tr>
             </table>
         </div>
+        <script src = "src/newteam.min.js"></script>
     </body>
 </html>
