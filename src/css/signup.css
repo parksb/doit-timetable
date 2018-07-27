@@ -3,7 +3,8 @@
 	width : 70%;
  }/* 위에 링크 */
 #signup {
-	margin : 50px 25% 0;
+	margin : auto;
+	margin-top : 50px;
 	border-radius: 10px;
     border: double 5px black;
 	padding: 5px 5% 5px 5%;
