@@ -16,7 +16,7 @@
                             if ($.inArray(member[0], memberlist) == -1){ // 중복입력 방지
                                 memberlist.push(member[0]);
                                 $("#memberlist").append(
-                                    '<tr class = "member"> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
+                                    '<tr class = "member"> <th> <input type="checkbox" name="chk"/> </th> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
                                 )
                             }else{
                                 alert("벌써 입력된 유저입니다.");
@@ -35,10 +35,22 @@
                     "<input type = 'text' name = 'teamMembers' value ="+ JSON.stringify(memberlist) + ">" // see if there is a way to send this info without it being having to appear on screen
                 )
             }
+            
+            function deleteRow(tableID) {
+                var table = document.getElementById(tableID);
+                var rowCount = table.rows.length;
 
-            $(".member").click(function(){
-                console.log("member is clicked.");
-            })
+                for(var i=1; i<rowCount; i++) {
+                    var row = table.rows[i];
+                    var chkbox = row.cell[0].childNodes[0]; //how to get the value of the checkbox?
+                    console.log(chkbox); //currently is shown as undefined
+                    if(null != chkbox && true == chkbox.checked) {
+                        table.deleteRow(i);
+                        rowCount--;
+                        i--;
+                    }
+                }
+		    }
             // 벌써 선택된 유저를 지우는 방법 필요
             
         </script>
@@ -61,11 +73,13 @@
         <h3>팀원 목록</h3>
         <table id = "memberlist"> <!--memberlist는 json stringify로 db에 저장-->
             <tr>
+                <th></th>
                 <th>이름</th>
                 <th>아이디</th>
                 <th>이메일</th>
             </tr>
         </table>
+        <button onclick = "deleteRow('memberlist')">유저 빼기</button>
         <script src = "src/newteam.min.js"></script>
     </body>
 </html> 
