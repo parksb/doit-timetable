@@ -1,23 +1,22 @@
 #linklist{
 	float : right;
 	width : 70%;
-}
+ }/* 위에 링크 */
 #signup {
-	margin : 50px 25% 0;
+	margin : auto;
+	margin-top : 50px;
 	border-radius: 10px;
     border: double 5px black;
 	padding: 5px 5% 5px 5%;
 	width : 260px;
 	height: 200px;
-}
+}/* signup box */
 .left {
 	float : left;
-}
+} 
 
 #signupname {
 	padding: 0 5% 0 0;
-}
-#submit {
-	width: 91px;
-	height: 21px;
-}
+}/* signup 표시 */
+
+
