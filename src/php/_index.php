@@ -17,7 +17,7 @@ if($count==1){
 
     if(isset($_SESSION['id'])){
         echo "<script>alert(\"login success\");history.back(-1);</script>";
-        header('Location: ../../main.php');
+        header('Location: ..../public/main.php');
         
     }else{
         echo "<script>alert(\"fail\");history.back(-1);</script>";
