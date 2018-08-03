@@ -11,7 +11,8 @@ module.exports = {
     teamtable: './src/js/teamtable.js',
     teamlist: './src/js/teamlist.js',
     main: './src/js/main.js',
-    setting: './src/js/setting.js'
+    setting: './src/js/setting.js',
+    newteam: './src/js/newteam.js'
   },
   output: {
     path: path.join(__dirname, './dist/src/'),
