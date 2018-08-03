@@ -5,6 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             var memberlist = [];
+
             function memSearch(){
                 var memberID = document.getElementById("memberID").value; //입력된 팀원의 아이디
                 var xmlhttp = new XMLHttpRequest();
@@ -15,7 +16,7 @@
                             if ($.inArray(member[0], memberlist) == -1){ // 중복입력 방지
                                 memberlist.push(member[0]);
                                 $("#memberlist").append(
-                                    '<tr> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
+                                    '<tr class = "member"> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
                                 )
                             }else{
                                 alert("벌써 입력된 유저입니다.");
@@ -28,11 +29,18 @@
                 xmlhttp.open("GET", "src/php/_memsearch.php?memID=" + memberID, true);
                 xmlhttp.send();
             }
+
             function memInfo(){
                 $("#send").append(
-                    "<input type = 'text' name = 'teamMembers' value ="+ JSON.stringify(memberlist) + ">"
+                    "<input type = 'text' name = 'teamMembers' value ="+ JSON.stringify(memberlist) + ">" // see if there is a way to send this info without it being having to appear on screen
                 )
             }
+
+            $(".member").click(function(){
+                console.log("member is clicked.");
+            })
+            // 벌써 선택된 유저를 지우는 방법 필요
+            
         </script>
     </head>
     <body>
