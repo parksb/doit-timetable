@@ -1,7 +1,10 @@
 import $ from 'jquery';
 import '../css/newteam.css';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import $ from 'jquery';
+=======
+>>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
 =======
 >>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
 
@@ -18,7 +21,11 @@ function memSearch(){
                     memberlist.push(member[0]);
                     $("#memberlist").append(
 <<<<<<< HEAD
+<<<<<<< HEAD
                         '<tr class = "member"> <th> <input type="checkbox" id = "' + member[0] +'"> </th> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
+=======
+                        '<tr class = "member"> <th> <input type="checkbox" name="chk"/> </th> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
+>>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
 =======
                         '<tr class = "member"> <th> <input type="checkbox" name="chk"/> </th> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
 >>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
@@ -42,6 +49,7 @@ function memInfo(){
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function deleteUser() {
     var table = document.getElementById('memberlist');
     var rowCount = memberlist.length;
@@ -52,6 +60,8 @@ function deleteUser() {
             table.deleteRow(i+1);
             memberlist.splice(i, 1);
 =======
+=======
+>>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
 function deleteRow(tableID) {
     var table = document.getElementById(tableID);
     var rowCount = table.rows.length;
@@ -62,12 +72,16 @@ function deleteRow(tableID) {
         console.log(chkbox); //currently is shown as undefined
         if(null != chkbox && true == chkbox.checked) {
             table.deleteRow(i);
+<<<<<<< HEAD
+>>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
+=======
 >>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
             rowCount--;
             i--;
         }
     }
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -83,10 +97,16 @@ $('#deleteUser').on('click', () => {
     deleteUser();
 });
 =======
+=======
+>>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
 // 벌써 선택된 유저를 지우는 방법 필요
 
 $('#memSearch').on('click', () => {
     memSearch();
   });
+<<<<<<< HEAD
+  //할 것 : team member의 정보에서 []와 ""을 제외한 숫자와 ,만 저장
+>>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
+=======
   //할 것 : team member의 정보에서 []와 ""을 제외한 숫자와 ,만 저장
 >>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
