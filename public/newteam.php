@@ -2,13 +2,6 @@
 <html>
     <head>
         <title>팀 생성</title>
-<<<<<<< HEAD
-=======
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<<<<<<< HEAD
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-=======
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
     </head>
     <body>
         <header>

@@ -1,12 +1,6 @@
 import $ from 'jquery';
 import '../css/newteam.css';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import $ from 'jquery';
-=======
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-=======
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
+
 
 var memberlist = [];
 
@@ -20,15 +14,7 @@ function memSearch(){
                 if ($.inArray(member[0], memberlist) == -1){ // 중복입력 방지
                     memberlist.push(member[0]);
                     $("#memberlist").append(
-<<<<<<< HEAD
-<<<<<<< HEAD
                         '<tr class = "member"> <th> <input type="checkbox" id = "' + member[0] +'"> </th> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
-=======
-                        '<tr class = "member"> <th> <input type="checkbox" name="chk"/> </th> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-=======
-                        '<tr class = "member"> <th> <input type="checkbox" name="chk"/> </th> <th>' + member[1] + '</th> <th>' + member[2] + '</th> <th>' + member[3] + '</th> </tr>'
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
                     )
                 }else{
                     alert("벌써 입력된 유저입니다.");
@@ -43,13 +29,12 @@ function memSearch(){
 }
 
 function memInfo(){
+    memberlist = memberlist.join(', ');
     $("#send").append(
-        "<input type = 'text' name = 'teamMembers' value ="+ JSON.stringify(memberlist) + ">" // see if there is a way to send this info without it being having to appear on screen
+        "<input type = 'text' name = 'teamMembers' value ="+ memberlist + ">" // see if there is a way to send this info without it being having to appear on screen
     )
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 function deleteUser() {
     var table = document.getElementById('memberlist');
     var rowCount = memberlist.length;
@@ -59,31 +44,9 @@ function deleteUser() {
         if(chkbox != null && chkbox.checked == true) {
             table.deleteRow(i+1);
             memberlist.splice(i, 1);
-=======
-=======
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-function deleteRow(tableID) {
-    var table = document.getElementById(tableID);
-    var rowCount = table.rows.length;
-
-    for(var i=1; i<rowCount; i++) {
-        var row = table.rows[i];
-        var chkbox = row.cell[0].childNodes[0]; //how to get the value of the checkbox?
-        console.log(chkbox); //currently is shown as undefined
-        if(null != chkbox && true == chkbox.checked) {
-            table.deleteRow(i);
-<<<<<<< HEAD
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-=======
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-            rowCount--;
-            i--;
         }
     }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 
 $('#memSearch').on('click', () => {
     memSearch();
@@ -96,17 +59,4 @@ $('#memInfo').on('click', () => {
 $('#deleteUser').on('click', () => {
     deleteUser();
 });
-=======
-=======
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-// 벌써 선택된 유저를 지우는 방법 필요
 
-$('#memSearch').on('click', () => {
-    memSearch();
-  });
-<<<<<<< HEAD
-  //할 것 : team member의 정보에서 []와 ""을 제외한 숫자와 ,만 저장
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
-=======
-  //할 것 : team member의 정보에서 []와 ""을 제외한 숫자와 ,만 저장
->>>>>>> 79e361c8e4020a4dbafaf050e6c65093c4e1d361
