@@ -4,10 +4,6 @@ import '../css/index.css';
 const times = ['12', '96']; // from database
 let idx = 0;
 
-$('#el').on('click', () => {
-    $(this).html('clicked');
-});
-
 for (var i = 0; i < 7; i++) {
     $('.block').append((e) => {
         if (times[idx] === e.toString() + i.toString()) {
