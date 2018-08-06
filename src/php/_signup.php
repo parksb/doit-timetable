@@ -70,7 +70,7 @@ if (isset($userName, $userID, $password, $email)){
     $query = "SELECT id FROM user WHERE userId = '$userID'";
     $result = mysqli_query($conn, $query);
     session_start();
-    $_SESSION['id'] = mysqli_fetch_row($result)[0];
+    $_SESSION['login_user'] = mysqli_fetch_row($result)[0];
     echo "<script>
     alert('회원가입이 완료되었습니다.');
     </script>";
