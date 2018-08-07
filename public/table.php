@@ -5,23 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개인 시간표</title>
-    <style>
-        h3 {
-            margin: 5% 15% 0px;
-        }
-        table, th, td {
-            margin: 5% 15% 0px;
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 5px;
-        }
-        button {
-            padding: 10px;
-            width: 150px;
-            margin: 1% 15% 0px;
-        }
-    </style>
 </head>
 <body>
     <h3>Your Team's timetable</h3>
@@ -61,7 +44,9 @@
                 <td align="center">18:00 ~ 19:00</td>
             </tr>
     </table>
-    <button id="save">저장</button>
+    <form id = "send" action = "../src/php/_table.php" method = "POST"> <!--send table data to db-->
+    <input type = "submit" id="save" value = "저장"></input>
+    </form>
     <script src = "./src/edit.min.js"></script>
 </body>
 </html>
