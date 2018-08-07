@@ -65,12 +65,12 @@ if (!empty($_POST["email"])) {
 }
 
 if (isset($userName, $userID, $password, $email)){
-  $query = "INSERT INTO user (name, userId, password, email) VALUES ('$userName', '$userID', '$password', '$email')";
+  $query = "INSERT INTO user (name, userId, password, email, times) VALUES ('$userName', '$userID', '$password', '$email',)";
   if(mysqli_query($conn, $query)){
     $query = "SELECT id FROM user WHERE userId = '$userID'";
     $result = mysqli_query($conn, $query);
     session_start();
-    $_SESSION['login_user'] = mysqli_fetch_row($result)[0];
+    $_SESSION['id'] = mysqli_fetch_row($result)[0];
     echo "<script>
     alert('회원가입이 완료되었습니다.');
     </script>";
