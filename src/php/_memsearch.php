@@ -4,8 +4,6 @@ require "./_connect.php";
 
 $memId = $_REQUEST["memID"];
 $query = "SELECT id, name, userId, email FROM user WHERE userId = '$memId'";
-$result = mysqli_query($conn, $query);
-$member = mysqli_fetch_row($result);
 if ($result = mysqli_query($conn, $query)){
         $member = mysqli_fetch_row($result);
         echo json_encode($member);
