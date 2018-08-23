@@ -39,7 +39,7 @@ if (!empty($_POST["ID"])) {
 }
 if (!empty($_POST["password"])) {
   if((strlen($_POST["password"]) >= 8 && strlen($_POST["password"]) < 20)){
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $password = md5($_POST["password"]); // changed the 암호화 함수 because before one updates
   }else{ //비밀번호의 길이<8 비밀번호의 길이>=20일 때
     echo "<script>
         alert('비밀번호의 길이는 8이상 20미만이어야 합니다.');
@@ -65,7 +65,7 @@ if (!empty($_POST["email"])) {
 }
 
 if (isset($userName, $userID, $password, $email)){
-  $query = "INSERT INTO user (name, userId, password, email, times) VALUES ('$userName', '$userID', '$password', '$email',)";
+  $query = "INSERT INTO user (name, userId, password, email, times) VALUES ('$userName', '$userID', '$password', '$email', '')";
   if(mysqli_query($conn, $query)){
     $query = "SELECT id FROM user WHERE userId = '$userID'";
     $result = mysqli_query($conn, $query);
@@ -77,9 +77,9 @@ if (isset($userName, $userID, $password, $email)){
     header("Location: http://localhost/timetable/dist/main.php");
     exit;
   }else{
+    echo "Error: " . $query . "<br>" . mysqli_error($conn);
     echo "<script>
     alert('오류가 발생했습니다.');
-    history.back(-1);
     </script>";
     exit;
   }

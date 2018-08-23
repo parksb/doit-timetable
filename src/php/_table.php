@@ -1,13 +1,19 @@
 <?php
 require "./_connect.php";
 
+
 $times = $_POST["times"];
-$id = '1'; // '1'을 $_SESSION['id']으로 바꿔야함
-echo "<script>
-    alert('$id');
+
+if (!isset($_SESSION["id"])){ //if session id is not set
+    echo "<script>
+    console.log('현재 로그인이 되지 않은 상태입니다. 테스트용으로 id = 1로 하겠습니다.');
     </script>";
+    $_SESSION["id"] = '1'; //if session is not set, 테스트용으로 session id를 1로 함
+}
+$ID = $_SESSION["id"];
+
 if(isset($times)){
-    $query = "UPDATE user SET times = '$times' WHERE id = '$id'";
+    $query = "UPDATE user SET times = '$times' WHERE id = '$ID'";
     if(mysqli_query($conn, $query)){
     echo "<script>
     alert('시간표가 저장되었습니다.');

@@ -1,7 +1,17 @@
 <?php
 require "./_connect.php";
 
-$ID = $_REQUEST["ID"];
+
+if (!isset($_SESSION["id"])){ //if session id is empty
+    /* echo "<script>
+    console.log('로그인을 하지 않은 상태입니다.');
+    </script>";
+    header("Location: http://localhost/timetable/dist.php");
+    exit; */ //actual using code
+    $_SESSION["id"] = '1';//for test
+}
+$ID = $_SESSION["id"];
+
 $query = "SELECT times FROM user WHERE id = '$ID'";
 if ($result = mysqli_query($conn, $query)){
         $times = mysqli_fetch_row($result);

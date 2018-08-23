@@ -3,19 +3,6 @@ import '../css/table.css';
 
 //session의 value을 이용하는 것 외에는 저장까지 작동함
 var times; // DB로 보내야하는 시간 데이터
-/* var ID;
-
-function getID(){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function(){
-        if (this.readyState == 4 && this.status == 200){
-            ID = JSON.parse(this.responseText);
-            console.log(ID);
-            }
-    xmlhttp.open("GET", "src/php/_getID.php", true);
-    xmlhttp.send();
-    }
-} */ //php의 session에 있는 id를 가져오는 방법
 
 function drawTable() {
     const trBlock = '.block';
@@ -31,7 +18,8 @@ function drawTable() {
     var xmlhttp = new XMLHttpRequest(); // getting user's times
     xmlhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
-            times = JSON.parse(this.responseText);
+            times = JSON.parse(this.responseText); //JSON.parse(this.responseText);
+            console.log(times);
             if(times == ''){
                 times = [];
             }else{
@@ -40,7 +28,7 @@ function drawTable() {
             for (let i = 0; i < 7; i++) { //using user's time, drawing the table
                 $(trBlock).append((e) => {
                     if (times.length > a){
-                        if (times[a] === i.toString() + e.toString()) {
+                        if (times[a] === i.toString() + e.toString()) {//changed i and e
                             a++;
                             return `<td class = "time" style = "background-color : rgba(0, 0, 0, 255);" data-time="${i.toString() + e.toString()}"></td>`; //black
                         } else {
@@ -56,7 +44,7 @@ function drawTable() {
             
         }
     }
-    xmlhttp.open("GET", "src/php/_gettable.php?ID=1", true); //'1' 대신 ID를 넣어야함
+    xmlhttp.open("GET", "src/php/_gettable.php", true);
     xmlhttp.send();
 }
 
