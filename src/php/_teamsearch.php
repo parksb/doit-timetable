@@ -1,11 +1,9 @@
 <html>
 
 <body>
-    choose your team! ver...
+    choose your team!
     
-
-
-    <?php   
+    <?php
         require "./_connect.php";
         $team=$_GET['team_name'];
 
@@ -23,8 +21,8 @@
                 //같은 이름의 복수의 팀이 허용가능
                     ?>
                         <!--action 추후 추가 == 자신을 팀에 추가 -->
-                    <form method='get'>
-                        <select>
+                    <form method='get' action='./_addteam.php'>
+                        <select name='team'>
                             <?php
                              while($row=mysqli_fetch_array($teams)){
                                 $row_id=$row["id"];
