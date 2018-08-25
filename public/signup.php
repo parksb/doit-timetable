@@ -20,11 +20,11 @@
                 <span>이메일</span>
             </div>
             <form action = "../src/php/_signup.php" method = "POST" class = "left">
-        		<input type="text" id = "name" name = "name"></input><br>
-        		<input type="text" id = "ID" name = "ID"></input><br>
-           		<input type="password" id = "password" name = "password"></input><br>
-                <input type="text" id = "email" name = "email"></input><br>
-                <input type = "submit" value = "가입하기">
+        		<input type="text" id = "name" name = "name" /><br>
+        		<input type="text" id = "ID" name = "ID" /><br>
+           		<input type="password" id = "password" name = "password" /><br>
+                <input type="text" id = "email" name = "email" /><br>
+                <input type = "submit" value = "가입하기" />
             </form>
         </div>
         <script src = "src/signup.min.js"></script>

@@ -6,7 +6,7 @@
     <body>
         <header>
             <span>DoiT</span>
-            <div id = "linklist" align = "right">
+            <div id = "linklist">
                 <a href = "main.php" style = "text-decoration: none">메인</a>
                 <a href = "로그아웃" style = "text-decoration: none">로그아웃</a>
             </div>
