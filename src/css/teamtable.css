@@ -1,0 +1,19 @@
+body {
+  background: #2ecc71;
+  font-size: 1.5em;
+  color: white;
+}  
+
+#container {
+  width: 900px;
+  margin: auto;
+}
+
+table, th, td {
+  margin-top: 20px;
+  border: 2px solid white;
+}
+
+th, td {
+  padding: 20px;
+}

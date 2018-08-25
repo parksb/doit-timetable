@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import '../css/index.css';
+import '../css/teamtable.css';
 
 const times = ['12', '96']; // from database
 let idx = 0;

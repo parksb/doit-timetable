@@ -30,7 +30,7 @@ function drawTable() {
                     if (times.length > a){
                         if (times[a] === i.toString() + e.toString()) {//changed i and e
                             a++;
-                            return `<td class = "time" style = "background-color : rgba(0, 0, 0, 255);" data-time="${i.toString() + e.toString()}"></td>`; //black
+                            return `<td class = "time" style = "background-color : rgba(255, 255, 255, 255);" data-time="${i.toString() + e.toString()}"></td>`; //black
                         } else {
                             return `<td class = "time" data-time="${i.toString() + e.toString()}"></td>`;
                         }
@@ -55,7 +55,7 @@ function attachTableClickEvent() {
 
         if (clickedElement.css('background-color') === 'rgba(0, 0, 0, 0)') {
             times.push(time);
-            clickedElement.css('background-color', 'rgba(0, 0, 0, 255)'); // black
+            clickedElement.css('background-color', 'rgba(255, 255, 255, 255)'); // black
         } else {
             let idx  = times.indexOf(time);
             if (times.indexOf(time) >= 0) { // 클릭한 시간이 times에 존재할 경우
