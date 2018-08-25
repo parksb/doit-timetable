@@ -1,0 +1,15 @@
+h3 {
+    margin: 5% 15% 0px;
+}
+table, th, td {
+    margin: 5% 15% 0px;
+    border: 1px solid black;
+}
+th, td {
+    padding: 5px;
+}
+#save {
+    padding: 10px;
+    width: 150px;
+    margin: 1% 15% 0px;
+}

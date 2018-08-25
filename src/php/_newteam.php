@@ -11,7 +11,7 @@ if(!empty($_POST["teamName"])){ //팀 이름을 안 적은 경우
   exit;
 }
 
-if($_POST["teamMembers"] != '[]'){ // 팀 멤버의 수가 0인 경우
+if($_POST["teamMembers"] != ''){ // 팀 멤버의 수가 0인 경우
   $teamMembers = $_REQUEST["teamMembers"]; 
 }else{
   echo "<script>
