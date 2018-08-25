@@ -3,7 +3,7 @@ import '../css/teamlist.css';
 
 function renderList(list) {
   for (let i = 0; i < list.length; i += 1) {
-    $('#team-list').append(`<li><a href="./teamtable.php?i=${list[i].id}">${list[i].name}</a></li>`);
+    $('#team-list').append(`<a href="./teamtable.php?i=${list[i].id}"><li>${list[i].name}</li></a>`);
   }
 }
 
