@@ -9,7 +9,7 @@ if (!empty($_POST["wantname"]) or !empty($_POST["checkname"])){
             </script>";
         exit;
     } else if(empty($_POST["checkname"])){
-        echo "<script>
+        echo "<script>s
               alert('이름 확인란에 원하는 이름을 다시 한번 입력해주세요');
               history.back(-1);
             </script>";
@@ -45,9 +45,25 @@ if (!empty($_POST["currentpassword"]) or !empty($_POST["wantpassword"] or !empty
     $checkpassword = $_POST["checkpassword"];
 
     if(isset($wantName, $currentpassword, $wantpassword, $checkpassword)){
-        $query = "UPDATE user SET name = $wantName WHERE id = ??";
-        $result = mysqli_query($conn, $query);
+        $idquery = "UPDATE user SET name = $wantName WHERE name = 10000000"; // 현재 로그인 되어있는 id가 어디있는지 모르겠어요
+        $idresult = mysqli_query($conn, $idquery);
+        $pw="password";
+        $pwquery = "UPDATE user SET password = $wantpassword WHERE password = pw"; //현재 로그인 되어있는 pw~~~
+        $pwresult = mysqli_query($conn, $pwquery);
+
+
+        echo "<script>
+        alert('회원가입이 완료되었습니다.');
+        </script>";
+        header("Location: http://localhost/timetable/dist/main.php");
+        exit;
+    }else{
+        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+        echo "<script>
+        alert('오류가 발생했습니다.');
+        </script>";
+        exit;
     }
-    $result=mysqli_query($conn,$query);
 }
+
 ?>
