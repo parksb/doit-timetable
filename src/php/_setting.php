@@ -1,5 +1,6 @@
 <?php
-require "./_connect.php"
+require "./_connect.php";
+
 if (!empty($_POST["wantname"]) or !empty($_POST["checkname"])){
     if(empty($_POST["wantname"])){
         echo "<script>
@@ -9,13 +10,12 @@ if (!empty($_POST["wantname"]) or !empty($_POST["checkname"])){
         exit;
     } else if(empty($_POST["checkname"])){
         echo "<script>
-              alert('이름 확인란을 채워주세요.');
+              alert('이름 확인란에 원하는 이름을 다시 한번 입력해주세요');
               history.back(-1);
             </script>";
         exit;
     }
     $wantName = $_POST["wantname"];
-    $userName = $_POST["checkname"];
 }
 if (!empty($_POST["currentpassword"]) or !empty($_POST["wantpassword"] or !empty($_POST["checkpassword"]))) {
     if(empty($_POST["currentpassword"])){
@@ -38,9 +38,12 @@ if (!empty($_POST["currentpassword"]) or !empty($_POST["wantpassword"] or !empty
               history.back(-1);
             </script>";
         exit;
+    }//wantname=변경할 이름, checkname=이름 확인, currentpassword=현재 비밀번호, wantpassword=변경할 비밀번호, checkpassword=비밀번호 확인
+
+    if(isset($wantName, $checkname, $currentpassword, $wantpassword, $checkpassword)){
+        $query = "UPDATE user SET name = $wantName WHERE id = ??";
+        $result = mysqli_query($conn, $query);
     }
-    $query="SELECT "
     $result=mysqli_query($conn,$query);
-  }
 }
 ?>
