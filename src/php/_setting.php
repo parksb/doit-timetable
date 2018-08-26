@@ -40,7 +40,11 @@ if (!empty($_POST["currentpassword"]) or !empty($_POST["wantpassword"] or !empty
         exit;
     }//wantname=변경할 이름, checkname=이름 확인, currentpassword=현재 비밀번호, wantpassword=변경할 비밀번호, checkpassword=비밀번호 확인
 
-    if(isset($wantName, $checkname, $currentpassword, $wantpassword, $checkpassword)){
+    $currentpassword = $_POST["currentpassword"];
+    $wantpassword = $_POST["wantpassword"];
+    $checkpassword = $_POST["checkpassword"];
+
+    if(isset($wantName, $currentpassword, $wantpassword, $checkpassword)){
         $query = "UPDATE user SET name = $wantName WHERE id = ??";
         $result = mysqli_query($conn, $query);
     }
