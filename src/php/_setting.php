@@ -9,7 +9,7 @@ if (!empty($_POST["wantname"]) or !empty($_POST["checkname"])){
             </script>";
         exit;
     } else if(empty($_POST["checkname"])){
-        echo "<script>s
+        echo "<script>
               alert('이름 확인란에 원하는 이름을 다시 한번 입력해주세요');
               history.back(-1);
             </script>";
