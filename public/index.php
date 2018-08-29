@@ -3,18 +3,25 @@ session_start();
 ?>
 <html>
 <style>
-  h3 {
-    margin: 5% 30% 0px;
+  body {
+    background: #2ecc71;
+    text-align: center;
+    color: white;
+  }
+  h1 {
+    margin-top: 5%;
+    font-size: 1.5em;
   }
   input {
-    border: 2px double grey;
+    border: 2px double white;
+    width: 100%;
   }
   #des {
     border-radius: 10px;
-    border: double 5px black;
-    padding: 20px 20px 40px 80px;
+    border: double 5px white;
+    padding: 20px 40px 20px 40px;
     width: 35%;
-    height: 23%;
+    height: 30%;
     margin: auto;
     margin-top: 2%;
   }
@@ -24,43 +31,46 @@ session_start();
     height: 80%;
   }
   #des1 {
-    width: 70%;
-    margin: 0 0 0 -10%;
+    width: 100%;
     height: 80%;
+    margin: auto;
   }
   #des2 {
     margin: 0 0 0 0;
-    width: 30%;
-    padding-left: 5px;
+    width: 100%;
     height: 80%;
   }
   input {
     width: 100%;
     height: 20%;
   }
-  button {
-    height: 40%;
+  input[type="submit"] {
     width: 100%;
     cursor: pointer;
-    margin: 0 50% 0 0;
+    font-weight: bold;
+  }
+  input[type="submit"]:hover {
+    background: #2ecc71;
+    color: white;
   }
   #des3 {
     float: left;
-    font-size: 9px;
+    font-size: 0.7em;
     line-height: 6px;
-    padding-top: 5px;
+    padding-top: 10px;
     text-align: center;
-    border-top: 1px double grey;
+    border-top: 1px double white;
     height: 20%;
-    width: 120%;
-    margin: -10px 0 10px -20%;
+    width: 100%;
+    margin: -10px 0 10px 0;
   }
   .bar {
     width: 1%;
     height: 13px;
   }
-  .p {
-    cursor: pointer;
+  p {
+    font-size: 1.2em;
+    margin-top: 10px;
   }
   a{
     text-decoration: none;
@@ -68,19 +78,18 @@ session_start();
 </style>
 
 <body>
-  <h3>web project</h3>
+  <h1>Timetable</h1>
   <div id='des'>
-    <p style="margin-top: 0%">Log in</p>
+    <p>Log in</p>
 
     <div id='des1' class='the'>
       <form method='post' action='./src/php/_index.php'>
-        <input id="id" type="text" style="margin-bottom: 1px"
-        placeholder="id" name='user_id'>
+        <input id="id" type="text" placeholder="id" name='user_id' />
 
         <input id='passward' type="password"
-        placeholder="passward" name='user_pass'>
+        placeholder="passward" name='user_pass' />
       
-        <input type='submit' value='로그인'></button>
+        <input type='submit' value='로그인' />
       
       </form>
     </div>

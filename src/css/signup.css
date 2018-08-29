@@ -1,22 +1,56 @@
+body {
+	background: #2ecc71;
+	text-align: center;
+	color: white;
+}
+header {
+	margin-top: 5%;
+}
 #linklist{
-	float : right;
-	width : 70%;
+	width : 100%;
+	margin-top: 20px;
  }/* 위에 링크 */
 #signup {
-	margin : auto;
-	margin-top : 50px;
 	border-radius: 10px;
-    border: double 5px black;
-	padding: 5px 5% 5px 5%;
-	width : 260px;
-	height: 200px;
+	border: double 5px white;
+	padding: 20px 40px 20px 40px;
+	width: 35%;
+	height: 240px;
+	margin: auto;
+	margin-top: 2%;
 }/* signup box */
+
 .left {
 	float : left;
-} 
+	width: 60%;
+}
+
+header h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
 
 #signupname {
 	padding: 0 5% 0 0;
+	width: 10%;
+	min-width: 100px;
 }/* signup 표시 */
 
+input {
+	border: 2px double white;
+	width: 100%;
+}
 
+input[type="submit"] {
+	width: 100%;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+	background: #2ecc71;
+	color: white;
+}

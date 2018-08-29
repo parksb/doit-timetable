@@ -5,12 +5,8 @@
     </head>
     <body>
         <header>
-            <span>DoiT</span>
-            <div id = "linklist" align = "right">
-                <a href = "index.php" style = "text-decoration: none">로그인</a> <!--로그인으로 이동-->
-            </div>   
+            <h1>DoiT</h1>
         </header>
-        <hr>
         <div id = "signup"> <!--질문: 이 div에 h3외에 요소가 포함되지 않음-->
             <h3>회원가입</h3>
             <div class = "left" id = "signupname">
@@ -27,6 +23,9 @@
                 <input type = "submit" value = "가입하기" />
             </form>
         </div>
+        <div id = "linklist">
+                <a href = "index.php">로그인</a> <!--로그인으로 이동-->
+            </div>   
         <script src = "src/signup.min.js"></script>
     </body>
 </html>
