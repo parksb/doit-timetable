@@ -20,6 +20,7 @@ if (!empty($_POST["ID"])) {
     }else{ //ID가 사용중일 때
       echo "<script>
         alert('사용중인 ID입니다.');
+        history.back(-1);
         </script>";
       exit;
     }
