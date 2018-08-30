@@ -10,7 +10,7 @@
   <header>
     <span>DoiT</span>
       <div id = "linklist" align = "right">
-        <a href = "index.php" style = "text-decoration: none">로그아웃</a>
+        <a href = "../src/php/_logout.php" style = "text-decoration: none">로그아웃</a>
       </div>       
   </header>
   <hr>
