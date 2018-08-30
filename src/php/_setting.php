@@ -1,6 +1,21 @@
 <?php
 require "./_connect.php";
 
+session_start();
+
+if(isset($_SESSION['id'])){
+    $id=$_SESSION['id'];
+    $pw=$_SESSION['pw'];
+}
+
+else{
+    echo "<script>
+          alert('비정상적인 경로로 접근하셨습니다.');
+          </script>";
+          header("Location: http://localhost/timetable/dist/index.php");
+    exit;
+}
+
 if (!empty($_POST["wantname"]) or !empty($_POST["checkname"])){
     if(empty($_POST["wantname"])){
         echo "<script>
@@ -38,24 +53,36 @@ if (!empty($_POST["currentpassword"]) or !empty($_POST["wantpassword"] or !empty
               history.back(-1);
             </script>";
         exit;
-    }//wantname=변경할 이름, checkname=이름 확인, currentpassword=현재 비밀번호, wantpassword=변경할 비밀번호, checkpassword=비밀번호 확인
+    }
 
     $currentpassword = $_POST["currentpassword"];
     $wantpassword = $_POST["wantpassword"];
     $checkpassword = $_POST["checkpassword"];
 
+    $currpwquery = "SELECT password FROM user WHERE id = $id";
+    $currpwresult = mysqli_query($conn, $currpwquery);
+
+    if($currentpassword != $pw){
+        echo "<script>
+              alert('현재 비밀번호가 정확하지 않습니다.');
+              history.back(-1);
+            </script>";
+            exit;
+    }
     if(isset($wantName, $currentpassword, $wantpassword, $checkpassword)){
-        $idquery = "UPDATE user SET name = $wantName WHERE name = 10000000"; // 현재 로그인 되어있는 id가 어디있는지 모르겠어요
+        $idquery = "UPDATE user SET name = $wantName WHERE id = $id";
         $idresult = mysqli_query($conn, $idquery);
-        $pw="password";
-        $pwquery = "UPDATE user SET password = $wantpassword WHERE password = pw"; //현재 로그인 되어있는 pw~~~
+
+        $password=md5($wantpassword);
+        $pwquery = "UPDATE user SET password = $password WHERE id = $id";
         $pwresult = mysqli_query($conn, $pwquery);
 
 
         echo "<script>
-        alert('회원가입이 완료되었습니다.');
+        alert('설정이 완료되었습니다. 다시 로그인해주세요.');
         </script>";
-        header("Location: http://localhost/timetable/dist/main.php");
+        session_destory();
+        header("Location: http://localhost/timetable/dist/index.php");
         exit;
     }else{
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
