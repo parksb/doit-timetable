@@ -3,7 +3,7 @@ require "./_connect.php";
 
 session_start();
 
-if(isset($_SESSION['id'])){
+if(isset($_SESSION['id']) && isset($_SESSION['pw'])){
     $id=$_SESSION['id'];
     $pw=$_SESSION['pw'];
 }
@@ -62,7 +62,7 @@ if (!empty($_POST["currentpassword"]) or !empty($_POST["wantpassword"] or !empty
     $currpwquery = "SELECT password FROM user WHERE id = $id";
     $currpwresult = mysqli_query($conn, $currpwquery);
 
-    if($currentpassword != $pw){
+    if($currentpassword !== $pw){
         echo "<script>
               alert('현재 비밀번호가 정확하지 않습니다.');
               history.back(-1);
