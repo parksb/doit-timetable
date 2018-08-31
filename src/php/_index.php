@@ -19,8 +19,10 @@ if($count==1){
     $_SESSION['pw']=$md5pass;
 
     if(isset($_SESSION['id'])){
-        echo "<script>alert(\"login success\");history.back(-1);</script>";
-        header('Location: http://localhost/timetable/dist/main.php');
+        echo "<script type = 'text/javascript'>
+              alert(\"login success\");
+              window.location.replace(\"http://localhost/timetable/dist/main.php\");
+              </script>";
         
     }else{
         echo "<script>alert(\"fail\");history.back(-1);</script>";

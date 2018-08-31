@@ -7,11 +7,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['pw'])) {
     $id = $_SESSION['id'];
     $pw = $_SESSION['pw'];
 } else {
-    echo "<script>
-          alert('비정상적인 경로로 접근하셨습니다.');
-          </script>";
-    header("Location: http://localhost/timetable/dist/index.php");
-    exit;
+    echo "<script type = 'text/javascript'>
+            alert(\"비정상적인 경로로 접근하셨습니다.\");
+            window.location.replace(\"http://localhost/timetable/dist/index.php\");
+        </script>";
 }
 
 if (!empty($_POST["wantname"]) or !empty($_POST["checkname"])) {
@@ -104,28 +103,28 @@ if (isset($wantName, $currentpassword, $wantpassword, $checkpassword)) {
     $pwquery = "UPDATE user SET password = '$wantpassword' WHERE userId = '$id'";
     $pwresult = mysqli_query($conn, $pwquery);
 
-    echo "<script>
-        alert('비밀번호 변경이 완료되었습니다. 다시 로그인해주세요.');
+    echo "<script type = 'text/javascript'>
+            alert(\"비밀번호 변경이 완료되었습니다. 다시 로그인해주세요.\");
+            window.location.replace(\"http://localhost/timetable/dist/src/php/_logout.php\");
         </script>";
-        header("Location: http://localhost/timetable/dist/src/php/_logout.php");
 
 } else if (isset($wantName, $currentpassword)) {
     $idquery = "UPDATE user SET name = '$wantName' WHERE userId = '$id'";
     $idresult = mysqli_query($conn, $idquery);
 
-    echo "<script>
-        alert('이름 변경이 완료되었습니다. 다시 로그인해주세요.');
+    echo "<script type = 'text/javascript'>
+            alert(\"이름 변경이 완료되었습니다. 다시 로그인해주세요.\");
+            window.location.replace(\"http://localhost/timetable/dist/src/php/_logout.php\");
         </script>";
-        header("Location: http://localhost/timetable/dist/src/php/_logout.php");
 
 } else if (isset($currentpassword, $wantpassword, $checkpassword)) {
     $pwquery = "UPDATE user SET password = '$wantpassword' WHERE userId = '$id'";
     $pwresult = mysqli_query($conn, $pwquery);
 
-    echo "<script>
-        alert('이름 및 비밀번호 변경이 완료되었습니다. 다시 로그인해주세요.');
+    echo "<script type = 'text/javascript'>
+            alert(\"이름 및 비밀번호 변경이 완료되었습니다. 다시 로그인해주세요.\");
+            window.location.replace(\"http://localhost/timetable/dist/src/php/_logout.php\");
         </script>";
-    header("Location: http://localhost/timetable/dist/src/php/_logout.php");
     
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conn);
