@@ -8,9 +8,9 @@ $pass = $_POST['user_pass'];
 
 $md5pass = md5($pass);
 
-$sql="SELECT*FROM user WHERE user_Id = '$id' AND pass='$md5pass'";
-
+$sql="SELECT*FROM user WHERE userId = '$id' AND password='$md5pass'";
 $res=mysqli_query($conn,$sql);
+
 $count=mysqli_num_rows($res);
 
 if($count==1){
@@ -20,7 +20,7 @@ if($count==1){
 
     if(isset($_SESSION['id'])){
         echo "<script>alert(\"login success\");history.back(-1);</script>";
-        header('Location: ../../public/main.php');
+        header('Location: http://localhost/timetable/dist/main.php');
         
     }else{
         echo "<script>alert(\"fail\");history.back(-1);</script>";
