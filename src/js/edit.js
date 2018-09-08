@@ -20,7 +20,7 @@ function drawTable() {
         if (this.readyState == 4 && this.status == 200){
             times = JSON.parse(this.responseText); //JSON.parse(this.responseText);
             console.log(times);
-            if(times == ''){
+            if(times == null){
                 times = [];
             }else{
                 times = times.split(',');
